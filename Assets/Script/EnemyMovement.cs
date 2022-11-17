@@ -15,7 +15,6 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        speedUNeed = 5f;
         timeIdle = 2f;
         rigidBody = this.GetComponent<Rigidbody>();
         rend = this.GetComponent<Renderer>();
@@ -41,7 +40,10 @@ public class EnemyMovement : MonoBehaviour
         {
             timeEnemyIdle();
         }
-        else
+    }
+
+    private void FixedUpdate() {
+        if(isCollision == false)
         {
             moveEnemy();
         }
