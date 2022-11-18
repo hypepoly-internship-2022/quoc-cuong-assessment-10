@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if(isCollided == true)
         {
-            timeEnemyIdle();
+            enemyIdle();
         }
     }
 
@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void timeEnemyIdle(){
+    private void enemyIdle(){
         if(timeIdle > 0)
         {
             timeIdle -= Time.deltaTime;
