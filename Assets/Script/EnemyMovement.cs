@@ -2,25 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : GameMgr
 {
-    [SerializeField] private float speedUNeed;
+    [SerializeField] private float speedUWant;
     [SerializeField] private Material[] material;
     [SerializeField] private GameObject containEnemy;
-
-    private Rigidbody rigidBody;
-    private bool isCollided;
-    private float timeIdle;
-    private Renderer rend;
-    private Animation aniEnemy;
 
     // Start is called before the first frame update
     private void Start()
     {
-        timeIdle = 2f;
-        rigidBody = this.GetComponent<Rigidbody>();
-        rend = this.GetComponent<Renderer>();
-        aniEnemy = containEnemy.GetComponent<Animation>();
+        OnLoadScene(containEnemy);
     }
 
     private void OnCollisionEnter(Collision collisionInfo)
@@ -28,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
         if(collisionInfo.collider.tag == "Wall")
         {   
             isCollided = true;
-            speedUNeed = -speedUNeed;
+            speedUWant = -speedUWant;
         } 
         else 
         {
@@ -61,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         else 
         {
             isCollided = false;
-            aniEnemy.Play();
+            ani.Play();
             rend.sharedMaterial = material[1];
             timeIdle = 2f;
         }
@@ -72,9 +63,9 @@ public class EnemyMovement : MonoBehaviour
         this.GetComponent<EnemyMovement>().enabled = false;
     }
 
-    private void moveEnemy() 
+    private void moveEnemy()
     {
-        rigidBody.AddForce(0, 0, speedUNeed);
+        rigidBody.AddForce(0, 0, speedUWant);
     }
 
 }
