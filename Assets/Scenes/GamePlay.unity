@@ -349,6 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 740581918}
   - component: {fileID: 740581919}
+  - component: {fileID: 740581920}
   m_Layer: 0
   m_Name: ContainEnemy
   m_TagString: Untagged
@@ -392,6 +393,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &740581920
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740581917}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 23d75989adc68264cbcc1eab6d0e8bf2, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &762438882
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +523,7 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: a31f73e3dcaf9c1469bedd1f003db541, type: 2}
   - {fileID: 2100000, guid: 7f0213407bb6ff84887140a154661a52, type: 2}
+  constainEnemy: {fileID: 740581917}
 --- !u!54 &762438889
 Rigidbody:
   m_ObjectHideFlags: 0

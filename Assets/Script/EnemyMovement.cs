@@ -6,11 +6,13 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float speedUNeed;
     [SerializeField] private Material[] material;
+    [SerializeField] private GameObject containEnemy;
 
     private Rigidbody rigidBody;
-    private bool isCollision;
+    private bool isCollided;
     private float timeIdle;
     private Renderer rend;
+    private Animation aniEnemy;
 
     // Start is called before the first frame update
     private void Start()
@@ -18,13 +20,14 @@ public class EnemyMovement : MonoBehaviour
         timeIdle = 2f;
         rigidBody = this.GetComponent<Rigidbody>();
         rend = this.GetComponent<Renderer>();
+        aniEnemy = containEnemy.GetComponent<Animation>();
     }
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
         if(collisionInfo.collider.tag == "Wall")
         {   
-            isCollision = true;
+            isCollided = true;
             speedUNeed = -speedUNeed;
         } 
         else 
@@ -36,14 +39,14 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(isCollision == true)
+        if(isCollided == true)
         {
             timeEnemyIdle();
         }
     }
 
     private void FixedUpdate() {
-        if(isCollision == false)
+        if(isCollided == false)
         {
             moveEnemy();
         }
@@ -57,7 +60,8 @@ public class EnemyMovement : MonoBehaviour
         }
         else 
         {
-            isCollision = false;
+            isCollided = false;
+            aniEnemy.Play();
             rend.sharedMaterial = material[1];
             timeIdle = 2f;
         }
