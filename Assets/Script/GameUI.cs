@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameTime : MonoBehaviour
 {
 
-        // time = (int) Time.time;
+    // time = (int) Time.time;
 
     // Start is called before the first frame update
     void Start()

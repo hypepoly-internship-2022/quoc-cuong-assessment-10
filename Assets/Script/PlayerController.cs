@@ -62,8 +62,6 @@ public class PlayerController : GameMgr
             {
                 Vector3 pos = new Vector3(hit.point.x, this.transform.position.y, hit.point.z);
                 this.transform.position = pos;
-                Debug.Log(this.transform.position);
-
             }  
             else
             {
