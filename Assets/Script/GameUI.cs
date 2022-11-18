@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameTime : MonoBehaviour
+public class GameUI : MonoBehaviour
 {
 
     // time = (int) Time.time;

@@ -24,6 +24,19 @@ public class PlayerController : GameMgr
         OnLoadScene(containPlayer);
     }
 
+    private void OnCollisionEnter(Collision collisionInfo)
+    {
+        if(collisionInfo.collider.name == "Wall (1)")
+        {   
+            //Win
+            EndMove();
+        } 
+        else 
+        {
+            EndMove();
+        }
+    }
+
     // Update is called once per frame
     private void Update()
     {
@@ -38,8 +51,11 @@ public class PlayerController : GameMgr
             else
             {
                 isClicked = false;
-                MoveTarget(0, 0, 0);
             }
+        }
+        else
+        {
+            isClicked = false;
         }
     }
 
@@ -47,11 +63,15 @@ public class PlayerController : GameMgr
     {
         if(isClicked == true)
         {
-            checkClickOnCube();
+            checkInputClick();
+        }
+        else
+        {
+            MoveTarget(0, 0, 0);
         }
     }
 
-    private void checkClickOnCube()
+    private void checkInputClick()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -90,5 +110,10 @@ public class PlayerController : GameMgr
                 timeIdle = 2f;
             }
         }
+    }
+
+    private void EndMove()
+    {
+        this.GetComponent<PlayerController>().enabled = false;
     }
 }

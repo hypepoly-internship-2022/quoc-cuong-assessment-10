@@ -686,7 +686,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 780998221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5013e79e40fa52f45aad1bfa0547868b, type: 3}
+  m_Script: {fileID: 11500000, guid: c3b32ef51c17be442be83b51a2125264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &938046761
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   containPlayer: {fileID: 1144326566}
-  speedUWant: 40
+  speedUWant: 20
   material:
   - {fileID: 2100000, guid: a31f73e3dcaf9c1469bedd1f003db541, type: 2}
   - {fileID: 2100000, guid: a149060c124cb874f92ecfaa9a2c0dbb, type: 2}
