@@ -689,6 +689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3b32ef51c17be442be83b51a2125264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeText: {fileID: 780998223}
+  time: 90
+  playerController: {fileID: 938046766}
 --- !u!1 &938046761
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,10 +804,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   containPlayer: {fileID: 1144326566}
-  speedUWant: 20
+  speedUWant: 30
   material:
   - {fileID: 2100000, guid: a31f73e3dcaf9c1469bedd1f003db541, type: 2}
   - {fileID: 2100000, guid: a149060c124cb874f92ecfaa9a2c0dbb, type: 2}
+  isWon: 0
 --- !u!54 &938046767
 Rigidbody:
   m_ObjectHideFlags: 0

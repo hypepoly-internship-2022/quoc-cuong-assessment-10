@@ -9,6 +9,9 @@ public class PlayerController : GameMgr
     [SerializeField] private float speedUWant;
     [SerializeField] private Material[] material;
 
+    public bool isWon;
+    public bool isLose;
+
     private bool isMoving;
     private bool isClicked;
     private Camera mainCamera;
@@ -28,11 +31,12 @@ public class PlayerController : GameMgr
     {
         if(collisionInfo.collider.name == "Wall (1)")
         {   
-            //Win
+            isWon = true;
             EndMove();
         } 
         else 
         {
+            isLose = true;
             EndMove();
         }
     }
