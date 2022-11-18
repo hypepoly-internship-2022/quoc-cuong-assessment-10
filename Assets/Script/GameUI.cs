@@ -9,6 +9,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private float time;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private EnemyMovement enemyMovement;
 
     private int minutes;
     private int seconds;
@@ -17,6 +18,7 @@ public class GameUI : MonoBehaviour
     void Start()
     {
        playerController = FindObjectOfType<PlayerController>();
+       enemyMovement = FindObjectOfType<EnemyMovement>();
     }
 
     // Update is called once per frame
@@ -57,12 +59,16 @@ public class GameUI : MonoBehaviour
             else
             {
                 timeText.GetComponent<TextMeshProUGUI>().text = "Game Over";
+                playerController.EndMove();
+                enemyMovement.EndMove();
             }
         }
 
         if(minutes <= 0 && seconds <= 0)
         {
             timeText.GetComponent<TextMeshProUGUI>().text = "Game Over";
+            playerController.EndMove();
+            enemyMovement.EndMove();
         }
     }
 }

@@ -690,8 +690,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 780998223}
-  time: 90
+  time: 8
   playerController: {fileID: 938046766}
+  enemyMovement: {fileID: 762438887}
 --- !u!1 &938046761
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +810,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a31f73e3dcaf9c1469bedd1f003db541, type: 2}
   - {fileID: 2100000, guid: a149060c124cb874f92ecfaa9a2c0dbb, type: 2}
   isWon: 0
+  isLose: 0
 --- !u!54 &938046767
 Rigidbody:
   m_ObjectHideFlags: 0

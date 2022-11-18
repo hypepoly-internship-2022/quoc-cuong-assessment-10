@@ -21,10 +21,6 @@ public class EnemyMovement : GameMgr
             isCollided = true;
             speedUWant = -speedUWant;
         } 
-        else 
-        {
-            EndMove();
-        }
     }
     
     // Update is called once per frame
@@ -58,7 +54,7 @@ public class EnemyMovement : GameMgr
         }
     }
 
-    private void EndMove()
+    public void EndMove()
     {
         this.GetComponent<EnemyMovement>().enabled = false;
     }

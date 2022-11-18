@@ -32,12 +32,10 @@ public class PlayerController : GameMgr
         if(collisionInfo.collider.name == "Wall (1)")
         {   
             isWon = true;
-            EndMove();
         } 
         else 
         {
             isLose = true;
-            EndMove();
         }
     }
 
@@ -116,7 +114,7 @@ public class PlayerController : GameMgr
         }
     }
 
-    private void EndMove()
+    public void EndMove()
     {
         this.GetComponent<PlayerController>().enabled = false;
     }
