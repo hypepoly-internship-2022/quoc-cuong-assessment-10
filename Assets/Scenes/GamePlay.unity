@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 938046766}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -801,8 +801,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   containPlayer: {fileID: 1144326566}
-  speedUWant: 10
-  material: []
+  speedUWant: 40
+  material:
+  - {fileID: 2100000, guid: a31f73e3dcaf9c1469bedd1f003db541, type: 2}
+  - {fileID: 2100000, guid: a149060c124cb874f92ecfaa9a2c0dbb, type: 2}
 --- !u!54 &938046767
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -39,7 +39,7 @@ public class EnemyMovement : GameMgr
     private void FixedUpdate() {
         if(isCollided == false)
         {
-            moveEnemy();
+             MoveTarget(0, 0, speedUWant);
         }
     }
 
@@ -47,13 +47,13 @@ public class EnemyMovement : GameMgr
         if(timeIdle > 0)
         {
             timeIdle -= Time.deltaTime;
-            rend.sharedMaterial = material[0];
+            CustomMaterial(material[0]);
         }
         else 
         {
             isCollided = false;
-            ani.Play();
-            rend.sharedMaterial = material[1];
+            PlayAni();
+            CustomMaterial(material[1]);
             timeIdle = 2f;
         }
     }
@@ -61,11 +61,6 @@ public class EnemyMovement : GameMgr
     private void EndMove()
     {
         this.GetComponent<EnemyMovement>().enabled = false;
-    }
-
-    private void moveEnemy()
-    {
-        rigidBody.AddForce(0, 0, speedUWant);
     }
 
 }
